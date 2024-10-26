@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriptive Feedback Form</title>
+    <style>
+        /* Tab styles */
+        .tab {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        /* Tab content */
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Descriptive Feedback Form for Meeting Skills</h2>
+
+<!-- Input for Group Number -->
+<label for="groupNumber">Group Number:</label>
+<input type="number" id="groupNumber" name="groupNumber" placeholder="Enter Group Number" required><br><br>
+
+<!-- Input for Role -->
+<label for="role">Role:</label>
+<select id="role" name="role" required>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+</select><br><br>
+
+<!-- Tabs for each student's feedback -->
+<div class="tab">
+    <button class="tablinks" onclick="openForm(event, 'A')" id="defaultOpen">A</button>
+    <button class="tablinks" onclick="openForm(event, 'B')">B</button>
+    <button class="tablinks" onclick="openForm(event, 'C')">C</button>
+    <button class="tablinks" onclick="openForm(event, 'D')">D</button>
+</div>
+
+<!-- Form for Student A -->
+<div id="A" class="tabcontent">
+    <h3>Feedback for Student A</h3>
+
+    <!-- Message / Coherence -->
+    <label for="messageCoherenceA">Message / Coherence:</label><br>
+    <select id="messageCoherenceA" name="messageCoherenceA">
+        <option value="Strong understanding, clear and relevant responses">Strong understanding, clear and relevant responses</option>
+        <option value="Good understanding, mostly clear responses">Good understanding, mostly clear responses</option>
+        <option value="Adequate understanding, some relevant responses">Adequate understanding, some relevant responses</option>
+        <option value="Minimal understanding, barely relevant responses">Minimal understanding, barely relevant responses</option>
+        <option value="Lacks understanding, unclear responses">Lacks understanding, unclear responses</option>
+    </select><br><br>
+
+    <!-- Contribution to Interaction -->
+    <label for="contributionA">Contribution to Interaction:</label><br>
+    <select id="contributionA" name="contributionA">
+        <option value="Contributes all key ideas">Contributes all key ideas</option>
+        <option value="Contributes most key ideas">Contributes most key ideas</option>
+        <option value="Contributes some ideas">Contributes some ideas</option>
+        <option value="Minimal contribution">Minimal contribution</option>
+        <option value="No meaningful contribution">No meaningful contribution</option>
+    </select><br><br>
+
+    <!-- Cohesion / Fluency -->
+    <label for="cohesionFluencyA">Cohesion / Fluency:</label><br>
+    <select id="cohesionFluencyA" name="cohesionFluencyA">
+        <option value="Fluent and smooth">Fluent and smooth</option>
+        <option value="Fairly fluent, minor pauses">Fairly fluent, minor pauses</option>
+        <option value="Some hesitation, basic fluency">Some hesitation, basic fluency</option>
+        <option value="Hesitant, little fluency">Hesitant, little fluency</option>
+        <option value="Lacks fluency">Lacks fluency</option>
+    </select><br><br>
+
+    <!-- Control of Language -->
+    <label for="controlLanguageA">Control of Language:</label><br>
+    <select id="controlLanguageA" name="controlLanguageA">
+        <option value="Uses complex structures, accurate">Uses complex structures, accurate</option>
+        <option value="Good grammar, minor errors">Good grammar, minor errors</option>
+        <option value="Basic grammar, noticeable errors">Basic grammar, noticeable errors</option>
+        <option value="Frequent errors, unclear meaning">Frequent errors, unclear meaning</option>
+    </select><br><br>
+
+    <!-- Control of Speech -->
+    <label for="controlSpeechA">Control of Speech:</label><br>
+    <select id="controlSpeechA" name="controlSpeechA">
+        <option value="Clear rhythm, accurate pronunciation, stress, and intonation">Clear rhythm, accurate pronunciation, stress, and intonation</option>
+        <option value="Mostly clear speech with minor issues in rhythm or pronunciation">Mostly clear speech with minor issues in rhythm or pronunciation</option>
+        <option value="Adequate speech control, occasional pronunciation issues">Adequate speech control, occasional pronunciation issues</option>
+        <option value="Inconsistent rhythm and pronunciation, frequent errors">Inconsistent rhythm and pronunciation, frequent errors</option>
+        <option value="Poor control of speech, unclear pronunciation">Poor control of speech, unclear pronunciation</option>
+    </select><br><br>
+
+    <!-- Non-verbal Communication -->
+    <label for="nonVerbalA">Non-verbal Communication:</label><br>
+    <select id="nonVerbalA" name="nonVerbalA">
+        <option value="Consistently effective use of gestures and eye contact">Consistently effective use of gestures and eye contact</option>
+        <option value="Generally effective use of gestures and eye contact">Generally effective use of gestures and eye contact</option>
+        <option value="Basic use of gestures and eye contact">Basic use of gestures and eye contact</option>
+        <option value="Limited and inconsistent use of non-verbal communication">Limited and inconsistent use of non-verbal communication</option>
+        <option value="No use of non-verbal communication">No use of non-verbal communication</option>
+    </select><br><br>
+
+    <!-- Grade -->
+    <label for="gradeA">Grade:</label><br>
+    <select id="gradeA" name="gradeA">
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+        <option value="C-">C-</option>
+        <option value="D+">D+</option>
+        <option value="D">D</option>
+        <option value="F">F</option>
+        <option value="F-">F-</option>
+    </select><br><br>
+
+    <!-- Overall Feedback -->
+    <label for="overallFeedbackA">Overall Feedback:</label><br>
+    <textarea id="overallFeedbackA" name="overallFeedbackA" rows="4" cols="50" placeholder="Write overall feedback..."></textarea><br><br>
+</div>
+
+<!-- Repeat the same structure for Students B, C, and D -->
+
+<!-- Submit button for all evaluations -->
+<button type="button" onclick="submitAllForms()">Submit All Evaluations</button>
+
+<script>
+// Function to open tab content
+function openForm(evt, formName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(formName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Automatically open the first tab
+document.getElementById("defaultOpen").click();
+
+// Function to submit all forms at once
+function submitAllForms() {
+    var groupNumber = document.getElementById('groupNumber').value;
+    var role = document.getElementById('role').value;
+
+    if (!groupNumber || !role) {
+        alert("Please enter the group number and select a role.");
+        return;
+    }
+
+    // Collect feedback for Student A
+    var formAData = {
+        "messageCoherence": document.getElementById('messageCoherenceA').value,
+        "contribution": document.getElementById('contributionA').value,
+        "
